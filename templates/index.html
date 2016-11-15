@@ -7,17 +7,13 @@
     <h1>Big text</h1>
     <h1>Big text again</h1>
     <p>Smaller text</p>
-    {% if name == "Pierce" %}
-    {% else %}
-    {% endif %}
     <p>{{ name }}</p>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
     <script>
       $.getJSON("/data", function(result) {
         $.each(result, function(value) {
-          console.log(value);
-          $('body').append('<h3>' + value + "</h3><p>" + result.value + "</p><hr>");
+          $('body').append('<h3>' + value + "</h3><p>" + result[value] + "</p><hr>");
         });
       });
     </script>
